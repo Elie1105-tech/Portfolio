@@ -1,0 +1,169 @@
+root {
+    --bg: #141413;
+    /* fond principal */
+    --primary: #F8F8E7;
+    /* couleurs titres / accents - plus clair */
+    --secondary: #E0DFD6;
+    /* textes secondaires / borders - plus clair */
+    --muted: #FFFBEA;
+    /* CTA / boutons - plus visible */
+    --text: #FFFFFF;
+    /* texte clair (complément) - blanc pur */
+    --card-bg: rgba(255, 255, 255, 0.04);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: #141413;
+    color: #FFFFFF;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.08rem;
+    letter-spacing: 0.01em;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    backdrop-filter: blur(6px);
+}
+
+.nav-link {
+    color: #E0DFD6 !important;
+}
+
+.navbar-brand {
+    color: #F8F8E7;
+    font-weight: 700;
+    letter-spacing: .4px;
+}
+
+/* Burger menu icon blanc */
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Hero */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1 {
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    color: var(--secondary);
+    font-size: 1.12rem;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* CTA */
+.btn-cta {
+    background: var(--muted);
+    color: var(--bg);
+    border: 0;
+}
+
+.btn-cta:hover {
+    background: var(--secondary);
+    color: var(--bg);
+}
+
+/* Sections */
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    color: var(--primary);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+.section-title {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.proj-badge {
+    font-size: .75rem;
+    color: var(--bg);
+    background: var(--muted);
+    padding: .25rem .5rem;
+    border-radius: .4rem;
+    margin-right: .5rem;
+}
+
+/* Skills */
+.skill-name {
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: .92rem;
+}
+
+.skill-name {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+}
+
+.progress {
+    height: .6rem;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary), var(--muted));
+}
+
+/* Portfolio images placeholder */
+.placeholder {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+}
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 2rem 0;
+    color: var(--secondary);
+    font-size: 1.08rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+    .hero {
+        min-height: 60vh;
+        text-align: center;
+        margin-top: 4.5rem;
+    }
+
+    .hero h1,
+    .hero p {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.13);
+    }
+
+    .hero .col-md-6:last-child {
+        margin-top: 1.5rem;
+    }
+}

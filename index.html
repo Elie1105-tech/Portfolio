@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio — Développeur Web</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <style>
+        :root{
+            --bg: #141413;        /* fond principal */
+            --primary: #F8F8E7;   /* couleurs titres / accents - plus clair */
+            --secondary: #E0DFD6; /* textes secondaires / borders - plus clair */
+            --muted: #FFFBEA;     /* CTA / boutons - plus visible */
+            --text: #FFFFFF;      /* texte clair (complément) - blanc pur */
+            --card-bg: rgba(255,255,255,0.04);
+        }
+
+        html,body { height:100%; }
+        body{
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: var(--bg);
+            color: var(--text);
+            scroll-behavior: smooth;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            font-size: 1.08rem;
+            letter-spacing: 0.01em;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+            backdrop-filter: blur(6px);
+        }
+        .nav-link { color: var(--secondary) !important; }
+        .navbar-brand { color: var(--primary); font-weight:700; letter-spacing:.4px; }
+
+        /* Burger menu icon blanc */
+        .navbar-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items:center;
+        }
+        .hero h1 { color: var(--primary); font-weight:700; letter-spacing: -0.5px; }
+    .hero p { color: var(--secondary); font-size:1.12rem; font-weight:500; text-shadow:0 1px 2px rgba(0,0,0,0.12); }
+
+        /* CTA */
+        .btn-cta {
+            background: var(--muted);
+            color: var(--bg);
+            border: 0;
+        }
+        .btn-cta:hover { background: var(--secondary); color: var(--bg); }
+
+        /* Sections */
+        section { padding: 5rem 0; }
+        .section-title { color: var(--primary); margin-bottom:1.25rem; font-weight:600; }
+    .section-title { text-shadow:0 1px 2px rgba(0,0,0,0.10); }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .proj-badge {
+            font-size: .75rem;
+            color: var(--bg);
+            background: var(--muted);
+            padding: .25rem .5rem;
+            border-radius: .4rem;
+            margin-right:.5rem;
+        }
+
+        /* Skills */
+        .skill-name { color: var(--secondary); font-weight:600; font-size:.92rem; }
+    .skill-name { text-shadow:0 1px 2px rgba(0,0,0,0.10); }
+        .progress {
+            height: .6rem;
+            background: rgba(255,255,255,0.04);
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary), var(--muted));
+        }
+
+        /* Portfolio images placeholder */
+        .placeholder {
+            background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+            height:160px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color: var(--primary);
+            font-weight:700;
+            text-shadow:0 1px 2px rgba(0,0,0,0.10);
+        }
+
+        footer {
+            border-top:1px solid rgba(255,255,255,0.06);
+            padding: 2rem 0;
+            color: var(--secondary);
+            font-size:1.08rem;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 767px) {
+            .hero { min-height: 60vh; text-align:center; margin-top: 4.5rem; }
+            .hero h1, .hero p { text-shadow:0 2px 4px rgba(0,0,0,0.13); }
+            .hero .col-md-6:last-child { margin-top:1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" style="gap:0.5rem;">
+                <img src="images/logo-elie.svg" alt="Logo ELIE." style="height:38px; width:auto; display:inline-block; vertical-align:middle;" />
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#about">About me</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item ms-2"><a class="btn btn-cta" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / HOME -->
+    <header id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>Développeur Web</h1>
+                    <p>Je conçois des interfaces modernes, performantes et accessibles. Spécialisé en front-end et backend léger — prêt à transformer vos idées en produit.</p>
+                    <div class="mt-4">
+                        <a href="#portfolio" class="btn btn-cta me-2">Voir mon travail</a>
+                        <a href="#about" class="btn btn-outline-light">En savoir plus</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 text-md-end">
+                    <div style="display:inline-block; max-width:320px; width:100%;" class="card p-3">
+                        <div style="height:120px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); border-radius:6px;">
+                            <div style="text-align:center;">
+                                <div style="font-weight:700; color:var(--primary); font-size:1.1rem;">ANDRIANIAINA Josoa Elie</div>
+                                <div style="color:var(--secondary); font-size:.95rem;">Développeur Web — Front & Back</div>
+                            </div>
+                        </div>
+                        <div class="mt-3" style="color:var(--secondary); font-size:.95rem;">
+                            <span style="display:block; text-align:justify;">Disponible pour missions freelance ou CDI. Basé à Madagascar — interventions en remote possibles.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">À propos</h2>
+                    <p style="color:var(--secondary); font-size:1rem;">
+                        Je crée des sites et applications web clairs, rapides et maintenables. J'accorde une grande importance à l'accessibilité, la performance et la qualité du code. Toujours en apprentissage des meilleures pratiques et nouveaux frameworks.
+                    </p>
+                    <ul style="color:var(--secondary); list-style:none; padding-left:0;">
+                        <li>• Expérience en projets freelance et collaboratifs</li>
+                        <li>• Approche orientée résultats et utilisateurs</li>
+                        <li>• Communication claire et documentation systématique</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6 text-center">
+                    <div class="card p-3" style="max-width:360px; margin:auto;">
+                        <img alt="Avatar développeur" src="images/avatar-dev.svg" class="img-fluid rounded" style="border:1px solid rgba(255,255,255,0.03); background:#232323;" />
+                        <div class="mt-3" style="color:var(--secondary)">Contact rapide: <a href="mailto:josoaelieandrianiaina@gmail.com" style="color:var(--muted)">josoaelieandrianiaina@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="bg-transparent">
+        <div class="container">
+            <h3 class="section-title">Compétences</h3>
+            <p style="color:var(--secondary); margin-bottom:1.5rem;">Technologies et outils</p>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <div class="skill-name">HTML & CSS</div>
+                        <div class="progress mt-2"><div class="progress-bar" style="width:92%"></div></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="skill-name">Bootstrap</div>
+                        <div class="progress mt-2"><div class="progress-bar" style="width:90%"></div></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="skill-name">JavaScript</div>
+                        <div class="progress mt-2"><div class="progress-bar" style="width:80%"></div></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <div class="skill-name">PHP</div>
+                        <div class="progress mt-2"><div class="progress-bar" style="width:75%"></div></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="skill-name">MySQL</div>
+                        <div class="progress mt-2"><div class="progress-bar" style="width:70%"></div></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="skill-name">Laravel (en cours d'apprentissage)</div>
+                        <div class="progress mt-2"><div class="progress-bar" style="width:40%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+        <div class="container">
+            <h3 class="section-title">Portfolio</h3>
+            <p style="color:var(--secondary); margin-bottom:1.5rem;">Exemples de projets démontrant mes compétences front et back</p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="placeholder">Site vitrine — HTML / CSS / Bootstrap</div>
+                        <div class="card-body">
+                            <h5 style="color:var(--primary);">Vitrine entreprise</h5>
+                            <p style="color:var(--secondary); font-size:.95rem;">Design responsive et optimisation des performances pour un service local.</p>
+                            <div class="mt-3">
+                                <span class="proj-badge">HTML</span><span class="proj-badge">CSS</span><span class="proj-badge">Bootstrap</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+                            <a class="btn btn-sm btn-outline-light" href="#" role="button">Voir</a>
+                            <a class="btn btn-sm btn-cta" href="#">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="placeholder">Web App — JS</div>
+                        <div class="card-body">
+                            <h5 style="color:var(--primary);">Dashboard simple</h5>
+                            <p style="color:var(--secondary); font-size:.95rem;">Prototype d'un tableau de bord avec visualisation de données.</p>
+                            <div class="mt-3">
+                                <span class="proj-badge">JS</span><span class="proj-badge">API</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+                            <a class="btn btn-sm btn-outline-light" href="#">Voir</a>
+                            <a class="btn btn-sm btn-cta" href="#">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="placeholder">Blog — PHP / MySQL</div>
+                        <div class="card-body">
+                            <h5 style="color:var(--primary);">Blog dynamique</h5>
+                            <p style="color:var(--secondary); font-size:.95rem;">Système simple de gestion d'articles avec base de données.</p>
+                            <div class="mt-3">
+                                <span class="proj-badge">PHP</span><span class="proj-badge">MySQL</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+                            <a class="btn btn-sm btn-outline-light" href="#">Voir</a>
+                            <a class="btn btn-sm btn-cta" href="#">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exemple supplémentaire -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="placeholder">Site e‑commerce — Prototype</div>
+                        <div class="card-body">
+                            <h5 style="color:var(--primary);">Prototype e‑commerce</h5>
+                            <p style="color:var(--secondary); font-size:.95rem;">Maquettes et intégration front pour boutique en ligne.</p>
+                            <div class="mt-3">
+                                <span class="proj-badge">HTML</span><span class="proj-badge">CSS</span><span class="proj-badge">JS</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+                            <a class="btn btn-sm btn-outline-light" href="#">Voir</a>
+                            <a class="btn btn-sm btn-cta" href="#">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row justify-content-center align-items-stretch" style="background:rgba(255,255,255,0.03); border-radius:1.2rem; box-shadow:0 4px 24px 0 rgba(0,0,0,0.10); padding:2.5rem 1rem;">
+                <div class="col-lg-11 mx-auto d-flex flex-column flex-md-row align-items-stretch justify-content-center" style="gap:0;">
+                    <div class="flex-fill d-flex flex-column justify-content-center p-0 m-0" style="min-width:260px; border-radius:0; overflow:visible;">
+                        <h5 style="color:var(--primary); margin-bottom:.5rem; text-align:justify;">Contact</h5>
+                        <p style="color:var(--secondary); margin-bottom:.25rem; text-align:justify;">Intéressé par une collaboration ?</p>
+                        <form class="mt-3" method="post" action="#" style="max-width:400px;">
+                            <div class="mb-2">
+                                <label for="name" class="form-label" style="color:var(--secondary); text-align:justify;">Nom</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="email" class="form-label" style="color:var(--secondary); text-align:justify;">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="message" class="form-label" style="color:var(--secondary); text-align:justify;">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="3" required style="text-align:justify;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-cta mt-2">Envoyer</button>
+                        </form>
+                    </div>
+                    <div class="flex-fill d-flex flex-column align-items-center align-items-md-end justify-content-between p-0 m-0" style="min-width:260px; margin-left:0;">
+                        <div class="card w-100 mb-0 h-100 d-flex flex-column justify-content-between" style="max-width:340px; background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.13); box-shadow:0 2px 12px 0 rgba(0,0,0,0.10); border-radius:0; padding:2.2rem 2rem 1.5rem 2rem; min-height:340px;">
+                            <h6 style="color:var(--primary); margin-bottom:1.2rem; text-align:justify;">Infos</h6>
+                            <ul class="list-unstyled mb-4" style="color:var(--secondary); font-size:1rem;">
+                                    <li style="margin-bottom:1.1rem; display:flex; align-items:center; gap:.7rem;">
+                                        <span style="display:inline-flex; align-items:center;">
+                                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a5.53 5.53 0 0 0-5.5 5.5c0 4.2 5.5 10.5 5.5 10.5s5.5-6.3 5.5-10.5A5.53 5.53 0 0 0 8 0zm0 8a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                                        </span>
+                                        Antananarivo, Madagascar
+                                    </li>
+                                    <li style="text-align:left; margin-bottom:1.1rem; display:flex; align-items:center; gap:.7rem;">
+                                        <span style="display:inline-flex; align-items:center;">
+                                           <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </span>
+                                        <a href="mailto:josoaelieandrianiaina@gmail.com" style="color:var(--muted); text-decoration:underline;">josoaelieandrianiaina@gmail.com</a>
+                                    </li>
+                                    <li style="display:flex; align-items:center; gap:.7rem;">
+                                        <span style="display:inline-flex; align-items:center;">
+                                            <i class="fa fa-phone-alt"></i>
+                                        </span>
+                                        <a href="tel:+261346310581" style="color:var(--muted); text-decoration:underline;">+261 34 63 105 81</a>
+                                    </li>
+                            </ul>
+                            <div class="d-flex justify-content-start gap-3 pt-2 mt-auto">
+                                <a href="https://www.linkedin.com/" target="_blank" rel="noopener" style="color:var(--secondary);">
+                                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.324 0 .725 0h14.55c.4 0 .725.513.725 1.146v13.708c0 .633-.325 1.146-.725 1.146H.724A.723.723 0 0 1 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.357.54-1.357 1.248 0 .694.52 1.248 1.327 1.248h.014zm4.908 8.212V9.359c0-.215.016-.43.08-.584.175-.43.574-.876 1.243-.876.877 0 1.228.661 1.228 1.631v3.864h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.014a5.6 5.6 0 0 1 .014-.025V6.169h-2.4c.03.7 0 7.225 0 7.225h2.4z"/></svg>
+                                </a>
+                                <a href="https://github.com/" target="_blank" rel="noopener" style="color:var(--secondary);">
+                                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                                </a>
+                                <a href="https://facebook.com/" target="_blank" rel="noopener" style="color:var(--secondary);">
+                                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M8.94 8.5H10.5l.25-1.5H8.94V6.25c0-.41.13-.75.8-.75H10.8V4.09C10.67 4.06 10.13 4 9.53 4c-1.31 0-2.03.66-2.03 1.87V7H6v1.5h1.5V13h1.44V8.5z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center" style="color:var(--secondary);">
+                    <div>© <span id="year"></span> ANDRIANIAINA Josoa Elie — Tous droits réservés</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // année dynamique
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
