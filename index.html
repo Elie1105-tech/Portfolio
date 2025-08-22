@@ -13,7 +13,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .project-thumb img {
             width: 100%;
             height: 100%;
@@ -23,7 +22,6 @@
             background: #181824;
             transition: transform .25s;
         }
-
         .project-thumb img:hover {
             transform: scale(1.04);
         }
@@ -35,8 +33,28 @@
             width: 100%;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 1.2em;
+            min-height: 48px;
         }
-        
+    </style>
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 1001;
+            background: #232946;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            min-height: 48px;
+        }
+        header .brand {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            padding: 0.3em 1.2em 0.3em 1em;
+        }
         header .brand .logo {
             font-size: 1.5rem;
             font-weight: bold;
@@ -48,21 +66,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-
         header .brand h1 {
             font-size: 1.08rem;
             margin: 0;
             color: #F5F6FA;
         }
-
         header .brand p {
             font-size: 0.95rem;
             margin: 0;
             color: #a1a6b9;
         }
-
         header .menu-toggle {
             margin-left: auto;
             background: none;
@@ -72,13 +87,11 @@
             cursor: pointer;
             display: none;
         }
-
         header nav[aria-label="Navigation principale"] {
             display: flex;
             gap: 2em;
             align-items: center;
         }
-
         header nav[aria-label="Navigation principale"] a {
             color: #F5F6FA;
             text-decoration: none;
@@ -86,20 +99,16 @@
             font-size: 1.05rem;
             transition: color .2s;
         }
-
         header nav[aria-label="Navigation principale"] a:hover {
             color: #00D1B2;
         }
-
-        .wrap {
+        /* .wrap {
             padding-top: 56px;
-        }
-
+        } */
         @media (max-width: 900px) {
             header nav[aria-label="Navigation principale"] {
                 display: none !important;
             }
-
             header .menu-toggle {
                 display: block;
             }
@@ -161,7 +170,7 @@
 
         <!-- HERO -->
         <section id="hero" class="hero" aria-label="Présentation">
-            <div class="avatar-card" data-aos="zoom-in" role="img" aria-label="Avatar">
+            <div class="avatar-card" data-aos="zoom-in" role="img" aria-label="Avatar" >
                 <div class="avatar">
                     <!-- Remplacez src ci-dessous par votre photo -->
                     <img src="images/IMG_20241130_130217.jpg" alt="Avatar">
@@ -177,7 +186,7 @@
                     compétences et ma créativité. Je suis à la recherche d'opportunités pour mettre mes
                     compétences en pratique, relever de nouveaux défis et contribuer à des projets innovants.
                 </p>
-
+                
                 <div class="chips" aria-hidden="false">
                     <div class="chip">HTML</div>
                     <div class="chip">CSS</div>
@@ -280,7 +289,8 @@
 
             <div class="project-card" data-aos="zoom-in">
                 <div class="project-thumb">
-                    <img src="images/chat.png" alt="Aperçu Chat temps réel">
+                    <img src="images/chat.png"
+                        alt="Aperçu Chat temps réel">
                 </div>
                 <div class="project-body">
                     <h4>Chat en temps réel</h4>
@@ -297,7 +307,8 @@
 
             <div class="project-card" data-aos="zoom-in">
                 <div class="project-thumb">
-                    <img src="images/GS.png" alt="Aperçu Gestion de stocks">
+                    <img src="images/GS.png"
+                        alt="Aperçu Gestion de stocks">
                 </div>
                 <div class="project-body">
                     <h4>Application de gestion (stocks, ventes, factures)</h4>
@@ -322,24 +333,23 @@
             </div>
 
             <div class="contact-grid">
-                <form id="my-form" action="https://formspree.io/f/mqalrbwe" method="POST">
-                    <label for="name">Nom</label>
-                    <input id="name" name="name" type="text" placeholder="Votre nom" required>
+                   <form id="my-form" data-aos="fade-right" action="https://formspree.io/f/mqalrbwe" method="POST">
+                        <label for="name">Nom</label>
+                        <input id="name" name="name" type="text" placeholder="Votre nom" required>
 
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" placeholder="vous@exemple.com" required>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="vous@exemple.com" required>
 
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Décrivez votre projet..." required></textarea>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Décrivez votre projet..." required></textarea>
 
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
-                        <button class="btn btn--accent" type="submit">Envoyer</button>
-                    </div>
-                    <div id="formspree-success" style="display:none;color:#00D1B2;margin-top:10px;font-weight:500">
-                        Merci, votre message a bien été envoyé !</div>
-                </form>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+                            <button class="btn btn--accent" type="submit">Envoyer</button>
+                        </div>
+                        <div id="formspree-success" style="display:none;color:#00D1B2;margin-top:10px;font-weight:500">Merci, votre message a bien été envoyé !</div>
+                    </form>
 
-                <aside class="contact-info" aria-label="Informations de contact">
+                <aside class="contact-info" data-aos="fade-right" aria-label="Informations de contact">
                     <div class="info-row"><strong><i class="fa fa-map-marker-alt" aria-hidden="true"></i></strong><span
                             class="muted">Antananarivo, Madagascar</span></div>
                     <div class="info-row"><strong><i class="fa fa-envelope" aria-hidden="true"></i></strong><a
@@ -353,10 +363,8 @@
 
                     <div class="small muted">Réseaux</div>
                     <div style="display:flex;gap:10px;margin-top:8px">
-                        <a class="btn btn--dark" href="https://www.linkedin.com/in/josoa-elie-andrianiaina-517909295"
-                            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                        <a class="btn btn--dark" href="https://github.com/Elie1105-tech" aria-label="Github"><i
-                                class="bi bi-github"></i></a>
+                        <a class="btn btn--dark" href="https://www.linkedin.com/in/josoa-elie-andrianiaina-517909295" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn--dark" href="https://github.com/Elie1105-tech" aria-label="Github"><i class="bi bi-github"></i></a>
                     </div>
 
                     <p class="muted small" style="margin-top:16px">Disponible pour missions freelance et CDI. Réponse
@@ -373,8 +381,8 @@
     <script>
         // Formspree: vider les champs et afficher un message sans quitter la page
         const formspreeForm = document.getElementById('my-form');
-        if (formspreeForm) {
-            formspreeForm.addEventListener('submit', async function (e) {
+        if(formspreeForm){
+            formspreeForm.addEventListener('submit', async function(e){
                 e.preventDefault();
                 const data = new FormData(formspreeForm);
                 const res = await fetch(formspreeForm.action, {
@@ -382,12 +390,12 @@
                     body: data,
                     headers: { 'Accept': 'application/json' }
                 });
-                if (res.ok) {
+                if(res.ok){
                     formspreeForm.reset();
                     const msg = document.getElementById('formspree-success');
-                    if (msg) {
+                    if(msg){
                         msg.style.display = 'block';
-                        setTimeout(() => { msg.style.display = 'none'; }, 5000);
+                        setTimeout(()=>{msg.style.display='none';}, 5000);
                     }
                 }
             });
@@ -397,13 +405,13 @@
         const lightboxImg = document.getElementById('lightboxImg');
         document.querySelectorAll('.project-thumb img').forEach(img => {
             img.style.cursor = 'zoom-in';
-            img.addEventListener('click', function (e) {
+            img.addEventListener('click', function(e) {
                 lightboxImg.src = this.src;
                 lightboxOverlay.classList.add('open');
             });
         });
         // Fermer lightbox au clic sur overlay ou croix
-        lightboxOverlay.addEventListener('click', function (e) {
+        lightboxOverlay.addEventListener('click', function(e) {
             if (e.target === lightboxOverlay || e.target === lightboxImg) {
                 lightboxOverlay.classList.remove('open');
                 lightboxImg.src = '';
@@ -456,30 +464,30 @@
 
         const scrollProgress = document.getElementById('scroll-progress');
         window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.body.scrollHeight - window.innerHeight;
-            const scrolled = (scrollTop / docHeight) * 100;
-            scrollProgress.style.width = scrolled + '%';
+          const scrollTop = window.scrollY;
+          const docHeight = document.body.scrollHeight - window.innerHeight;
+          const scrolled = (scrollTop / docHeight) * 100;
+          scrollProgress.style.width = scrolled + '%';
         });
-
+        
         const scrollTopBtn = document.getElementById('scrollTopBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollTopBtn.style.display = 'flex';
-            } else {
-                scrollTopBtn.style.display = 'none';
-            }
-        });
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 300){
+        scrollTopBtn.style.display = 'flex';
+    } else {
+        scrollTopBtn.style.display = 'none';
+    }
+});
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({top:0, behavior:'smooth'});
+});
     </script>
     <script src="js/aos.js"></script>
     <script>
         AOS.init({
-            once: true,
-            duration: 700,
-            offset: 80
+           once: false,
+           duration: 700,
+           offset: 80
         });
     </script>
 </body>
