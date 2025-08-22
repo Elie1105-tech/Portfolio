@@ -29,7 +29,7 @@ body {
     margin: 0;
     font-family: Inter, Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     background: 
-        linear-gradient(180deg, var(--contrast)100%);
+        linear-gradient(180deg, var(--contrast));
     color: var(--muted);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -158,7 +158,7 @@ nav a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block
+    display: block;
 }
 
 .hero-info h2 {
@@ -301,8 +301,10 @@ section {
 }
 
 .project-thumb {
-    width: 120px;
-    height: 80px;
+    max-width: 50%;
+    width: 200px;
+    height:200px;
+    object-fit: fill;
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.25));
     overflow: hidden;
@@ -318,18 +320,58 @@ section {
 
 .project-body h4 {
     margin: 0;
-    font-size: 15px
+    font-size: 15px;
 }
 
 .project-body p {
     margin: 6px 0 10px 0;
     color: var(--soft-gray);
-    font-size: 13px
+    font-size: 13px;
+    /* text-align: justify; */
 }
 
 .project-actions {
     display: flex;
     gap: 8px
+}
+
+/* Lightbox styles */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(24, 24, 36, 0.92);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-overlay.open {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 92vw;
+    max-height: 90vh;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    background: #181824;
+}
+
+.lightbox-overlay:after {
+    content: "✕";
+    position: absolute;
+    top: 24px;
+    right: 38px;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+    text-shadow: 0 2px 8px #000;
 }
 
 /* Contact */
