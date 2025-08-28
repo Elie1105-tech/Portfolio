@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "pranaygp.vscode-css-peek",
+        "christian-kohler.path-intellisense",
+        "naumovs.color-highlight",
+        "devsense.intelli-php-vscode",
+        "batisteo.vscode-django",
+        "ms-python.python",
+        "syler.sass-indented"
+    ]
+}
